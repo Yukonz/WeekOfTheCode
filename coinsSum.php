@@ -49,7 +49,9 @@ function coinsSum(int $sum, array $coins) : array
 
             if (count($coins) == 1) {
                 if (count($all_coin_sets[array_key_last($all_coin_sets)]) == $min_coins_number) {
-                    return $all_coin_sets[array_key_last($all_coin_sets)];
+		    if (array_sum($all_coin_sets[array_key_last($all_coin_sets)]) == $sum) {	
+                    	return $all_coin_sets[array_key_last($all_coin_sets)];
+		    }	
                 }
             }
         }
